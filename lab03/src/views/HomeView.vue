@@ -1,21 +1,22 @@
 <template>
-  <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" /> -->
+  <div class="events">
     <EventCard v-for="event in events" :key="event.id" :event="event" />
+  </div>
+  <div class="category">
+    <Categories v-for="event in events" :key="event.id" :event="event" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import EventCard from '@/components/EventCard.vue'
+import Categories from '@/components/Categories.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    //   HelloWorld
-    // }
-    EventCard //register it as a child component
+    EventCard,
+    Categories
   },
   data() {
     return {
@@ -58,3 +59,16 @@ export default {
   }
 }
 </script>
+<style scoped>
+.events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.category {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>
