@@ -1,15 +1,17 @@
 <template>
   <div class="event-card">
-    <span>@{{ event.time }} on {{ event.date }} </span>
-    <h4>{{ event.title }}</h4>
+    <h3>{{ student.name }} {{ student.surname }}</h3>
+    <h4>GPA: {{ student.gpa }} PenAmount: {{ student.penAmount }}</h4>
+    <h4>{{ student.description }}</h4>
+    <img :src="student.image" class="image" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'EventCard',
+  name: 'StudentList',
   props: {
-    event: {
+    student: {
       type: Object,
       required: true
     }
@@ -25,9 +27,12 @@ export default {
   border: 1px solid #39495c;
   margin-bottom: 18px;
 }
-
 .event-card:hover {
   transform: scale(1.01);
   box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
+}
+.image {
+  width: 200px;
+  height: 200px;
 }
 </style>

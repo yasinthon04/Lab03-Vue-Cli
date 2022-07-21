@@ -11,8 +11,6 @@ import Categories from '@/components/Categories.vue'
 export default {
   name: 'EventListView',
   components: {
-    //   HelloWorld
-    // }
     Categories
   },
   data() {
